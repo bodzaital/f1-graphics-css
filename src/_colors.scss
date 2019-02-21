@@ -1,0 +1,46 @@
+// Context: (class-name, css-property).
+$color-types: (
+	("text", "color"),
+	("bg", "background-color")
+);
+
+// Context: (class-name, css-value).
+$teams: (
+	("mercedes",	rgb(0,   210, 190)),
+	("ferrari",		rgb(220,   0,   0)),
+	("redbull",		rgb(30,   65, 255)),
+	("renault",		rgb(255, 245,   0)),
+	("haas",		rgb(240, 215, 135)),
+	("tororosso",	rgb(70,  155, 255)),
+	("williams",	rgb(255, 255, 255)),
+	("racingpoint",	rgb(245, 150, 200)),
+	("alfaromeo",	rgb(155,   0,   0)),
+	("mclaren",		rgb(255, 135,   0))
+);
+
+.color-
+{
+	@each $color-type in $color-types
+	{
+		// E.g. text-
+		&#{nth($color-type, 1)}-
+		{
+			@each $team in $teams
+			{
+				// E.g. mercedes
+				&#{nth($team, 1)}
+				{
+					// E.g. color: rgb(0, 210, 190);
+					#{nth($color-type, 2)}: #{nth($team, 2)};
+				}
+			}
+		}
+	}
+}
+
+// These two work like this:
+// 1. Loop over the color types (one for (text) color, one for background-color).
+// 2. Create the class for that color type (.color-text-... or .color-bg-...).
+// 3. Loop over the teams.
+// 4. Create the class (e.g. .color-text-mercedes) and add the property (color: rgba(); or background-color: rgba();).
+// The end results are 20 classes, one for text, and one for background for the 10 teams.

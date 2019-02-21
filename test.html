@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Formula 1 CSS</title>
+	<link rel="stylesheet" href="dist/formula1.css">
+</head>
+<body>
+	<!-- <div class="f1 nameplate-short">
+		<div class="grid">
+			<span>1</span>
+		</div>
+		<div class="separator">
+			<div class="color-bg-mercedes"></div>
+		</div>
+		<div class="driver">
+			<div class="name">
+				<span class="firstname">Lewis</span><span class="lastname">Hamilton</span>
+			</div>
+			<div class="constructor">Mercedes</div>
+		</div>
+		<div class="ident">
+			<div class="number">44</div>
+			<div class="abbreviation">HAM</div>
+		</div>
+	</div> -->
+	
+	<script src="dist/formula1.js"></script>
+	<script>
+		let drivers = {
+			"drivers": [
+				{
+					"grid": 1,
+					"color": "mercedes",
+					"firstname": "Lewis",
+					"lastname": "Hamilton",
+					"constructor": "Mercedes",
+					"number": 44,
+					"abbreviation": "HAM"
+				},
+				{
+					"grid": 2,
+					"color": "ferrari",
+					"firstname": "Sebastian",
+					"lastname": "Vettel",
+					"constructor": "Ferrari",
+					"number": 5,
+					"abbreviation": "VET"
+				},
+				{
+					"grid": 3,
+					"color": "alfaromeo",
+					"firstname": "Kimi",
+					"lastname": "Räikkönen",
+					"constructor": "Alfa Romeo",
+					"number": 7,
+					"abbreviation": "RAI"
+				},
+				{
+					"grid": 4,
+					"color": "redbull",
+					"firstname": "Max",
+					"lastname": "Verstappen",
+					"constructor": "Red Bull",
+					"number": 33,
+					"abbreviation": "VER"
+				},
+				{
+					"grid": 5,
+					"color": "mercedes",
+					"firstname": "Valtteri",
+					"lastname": "Bottas",
+					"constructor": "Mercedes",
+					"number": 77,
+					"abbreviation": "BOT"
+				},
+				{
+					"grid": 6,
+					"color": "renault",
+					"firstname": "Daniel",
+					"lastname": "Ricciardo",
+					"constructor": "Renault",
+					"number": 3,
+					"abbreviation": "RIC"
+				},
+				{
+					"grid": 7,
+					"color": "renault",
+					"firstname": "Nico",
+					"lastname": "Hülkenberg",
+					"constructor": "Renault",
+					"number": 27,
+					"abbreviation": "HUL"
+				},
+				{
+					"grid": 8,
+					"color": "racingpoint",
+					"firstname": "Sergio",
+					"lastname": "Pérez",
+					"constructor": "Racing Point",
+					"number": 11,
+					"abbreviation": "PER"
+				},
+				{
+					"grid": 9,
+					"color": "haas",
+					"firstname": "Kevin",
+					"lastname": "Magnussen",
+					"constructor": "Haas",
+					"number": 20,
+					"abbreviation": "MAG"
+				},
+				{
+					"grid": 10,
+					"color": "mclaren",
+					"firstname": "Carlos",
+					"lastname": "Sainz",
+					"constructor": "McLaren",
+					"number": 55,
+					"abbreviation": "SAI"
+				},
+				{
+					"grid": 11,
+					"color": "ferrari",
+					"firstname": "Charles",
+					"lastname": "Leclerc",
+					"constructor": "Ferrari",
+					"number": 16,
+					"abbreviation": "LEC"
+				},
+				{
+					"grid": 12,
+					"color": "haas",
+					"firstname": "Romain",
+					"lastname": "Grosjean",
+					"constructor": "Haas",
+					"number": 8,
+					"abbreviation": "GRO"
+				},
+				{
+					"grid": 13,
+					"color": "redbull",
+					"firstname": "Pierre",
+					"lastname": "Gasly",
+					"constructor": "Red Bull",
+					"number": 10,
+					"abbreviation": "GAS"
+				},
+				{
+					"grid": 14,
+					"color": "racingpoint",
+					"firstname": "Lance",
+					"lastname": "Stroll",
+					"constructor": "Racing Point",
+					"number": 18,
+					"abbreviation": "STR"
+				},
+				{
+					"grid": 15,
+					"color": "tororosso",
+					"firstname": "Alexander",
+					"lastname": "Albon",
+					"constructor": "Toro Rosso",
+					"number": 23,
+					"abbreviation": "ALB"
+				},
+				{
+					"grid": 16,
+					"color": "alfaromeo",
+					"firstname": "Antonio",
+					"lastname": "Giovinazzi",
+					"constructor": "Alfa Romeo",
+					"number": 99,
+					"abbreviation": "GIO"
+				},
+				{
+					"grid": 17,
+					"color": "tororosso",
+					"firstname": "Daniil",
+					"lastname": "Kvyat",
+					"constructor": "Toro Rosso",
+					"number": 26,
+					"abbreviation": "KVY"
+				},
+				{
+					"grid": 18,
+					"color": "williams",
+					"firstname": "George",
+					"lastname": "Russell",
+					"constructor": "Williams",
+					"number": 63,
+					"abbreviation": "RUS"
+				},
+				{
+					"grid": 19,
+					"color": "mclaren",
+					"firstname": "Lando",
+					"lastname": "Norris",
+					"constructor": "McLaren",
+					"number": 4,
+					"abbreviation": "NOR"
+				},
+				{
+					"grid": 20,
+					"color": "williams",
+					"firstname": "Robert",
+					"lastname": "Kubica",
+					"constructor": "Williams",
+					"number": 88,
+					"abbreviation": "kub"
+				}
+			]
+		};
+
+		for (let i = 0; i < drivers.drivers.length; i++) {
+			let e = drivers.drivers[i];
+
+			NewNameplate(e, "body");
+		}
+	</script>
+</body>
+</html>

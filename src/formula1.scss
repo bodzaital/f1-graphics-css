@@ -1,0 +1,23 @@
+// *
+// {
+// 	outline: 1px solid red;
+// }
+
+@mixin rad-border
+{
+	border-radius: $b * .1;
+	border-bottom-right-radius: $b * .7;
+}
+
+$b: 16px;
+$nameplate-multiplier: 30;
+
+@import "_colors";
+
+.f1
+{
+	&.nameplate-short
+	{
+		@import "_nameplate-short";
+	}
+}
