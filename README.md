@@ -48,9 +48,9 @@ Then, after you included the script file, call `NewNameplate(json, target)`, whi
 ```json
 {
     "grid": {
-	    "position": 1,
-	    "state": "ontrack"
-	},
+        "position": 1,
+        "state": "ontrack"
+    },
     "color": "williams",
     "firstname": "Robert",
     "lastname": "Kubica",
