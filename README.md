@@ -47,7 +47,10 @@ Then, after you included the script file, call `NewNameplate(json, target)`, whi
 
 ```json
 {
-    "grid": 20,
+    "grid": {
+	    "position": 1,
+	    "state": "ontrack"
+	},
     "color": "williams",
     "firstname": "Robert",
     "lastname": "Kubica",
@@ -57,7 +60,7 @@ Then, after you included the script file, call `NewNameplate(json, target)`, whi
 }
 ```
 
-The driver's last name and abbreviation is automatically capitalized by the CSS. `color` needs to be in lowercase to match the CSS classes.
+The driver's last name and abbreviation is automatically capitalized by the CSS. `color` needs to be in lowercase to match the CSS classes. `grid.state` is one of three, see Grid colors.
 
 ## Prerequisites
 
@@ -73,11 +76,21 @@ The world feed uses a slightly different font (see: capital `M`). Sizes are not 
 
 TV broadcast graphics:
 
-![](images/screenshot-tv.png)
+![Captured TV broadcast graphics.](images/screenshot-tv.png)
 
 Recreated using CSS (from test.html):
 
-![](images/screenshot-cssv2.png)
+![Recreated TV graphics.](images/screenshot-cssv2.png)
+
+## Grid-colors
+
+The grid position can be colored to three styles:
+
+- `"grid.state": "ontrack"`: black on white
+- `"grid.state": "inpit"`: black on gray
+- `"grid.state": "eliminated"`: white on red
+
+![Grid colors: black on white, black on gray, and white on red.](images/grid-color.png)
 
 ## Team colors
 
