@@ -8,7 +8,7 @@ Link to the CSS file in the head tag:
 <link rel="stylesheet" href="formula1.css">
 ```
 
-You can either type the HTML out by hand, or use the script within test.html.
+You can either type the HTML out by hand, or use the script `formula1.js` within `dist/`.
 
 ### By hand
 
