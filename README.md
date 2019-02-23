@@ -16,7 +16,7 @@ The format is the following:
 
 ```html
 <div class="f1 nameplate-short">
-    <div class="grid">
+    <div class="grid [grid-state]">
         <span>[grid-position]</span>
     </div>
     <div class="separator">
