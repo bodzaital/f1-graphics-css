@@ -7,7 +7,7 @@ function ElementAndClass(x, y) {
 function NewNameplate(json, target) {
 	let a = ElementAndClass("div", "f1 nameplate-short");
 
-	let grid = ElementAndClass("div", `grid ${json.grid.state}`);
+	let grid = ElementAndClass("div", `grid grid-${json.grid.state}`);
 	let span = document.createElement("span");
 	span.innerText = json.grid.position;
 	grid.appendChild(span);

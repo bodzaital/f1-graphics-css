@@ -16,7 +16,7 @@ The format is the following:
 
 ```html
 <div class="f1 nameplate-short">
-    <div class="grid [grid-state]">
+    <div class="grid grid-[grid-state]">
         <span>[grid-position]</span>
     </div>
     <div class="separator">
@@ -60,7 +60,11 @@ Then, after you included the script file, call `NewNameplate(json, target)`, whi
 }
 ```
 
-The driver's last name and abbreviation is automatically capitalized by the CSS. `color` needs to be in lowercase to match the CSS classes. `grid.state` is one of three, see Grid colors.
+
+
+The driver's last name and abbreviation is automatically capitalized by the CSS. 
+
+For `color` and `grid.state`, see below.
 
 ## Prerequisites
 
@@ -82,7 +86,7 @@ Recreated using CSS (from test.html):
 
 ![Recreated TV graphics.](images/screenshot-cssv2.png)
 
-## Grid-colors
+## Grid colors
 
 The grid position can be colored to three styles:
 
@@ -90,7 +94,28 @@ The grid position can be colored to three styles:
 - `"grid.state": "inpit"`: black on gray
 - `"grid.state": "eliminated"`: white on red
 
+These can be used as the following classes:
+
+- `grid grid-ontrack`
+- `grid grid-inpit`
+- `grid grid-eliminated`
+
 ![Grid colors: black on white, black on gray, and white on red.](images/grid-color.png)
+
+You can add custom grid colors by adding it either `$grid.blacktext` or `$grid.whitetext` lists:
+
+```scss
+$grid-blacktext: (
+    ("inpit",   rgb(160, 160, 160)),
+    ("ontrack", rgb(255, 255, 255)),
+    ("dnf",     rgb(255, 255, 0))
+);
+
+$grid-whitetext: (
+    ("inpit",   rgb(160, 160, 160)),
+    ("dns",     rgb(128, 255, 128))
+);
+```
 
 ## Team colors
 
@@ -98,7 +123,7 @@ Team colors are: `.color-[type]-[team]` where:
 
 - `[type]` is
 
-  - `text` for text color or
+  - `text` for text color, or
   - `bg` for background color
 
 - `[team]` is

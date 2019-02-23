@@ -48,3 +48,34 @@ $teams: (
 $grid-eliminated: rgb(118, 1, 15);
 $grid-ontrack: rgb(255, 255, 255);
 $grid-inpit: rgb(160, 160, 160);
+
+$grid-blacktext: (
+	("inpit", rgb(160, 160, 160)),
+	("ontrack", rgb(255, 255, 255))
+);
+
+// The comma is needed at the end of 1 element lists, otherwise the foreach fails.
+// If the list has more than 1 element, the last item does not need the comma.
+$grid-whitetext: (
+	("eliminated", rgb(118, 1, 15)),
+);
+
+.grid-
+{
+	@each $black in $grid-blacktext
+	{
+		&#{nth($black, 1)}
+		{
+			background-color: #{nth($black, 2)};
+		}
+	}
+
+	@each $white in $grid-whitetext
+	{
+		&#{nth($white, 1)}
+		{
+			background-color: #{nth($white, 2)};
+			color: rgb(255, 255, 255);
+		}
+	}
+}
