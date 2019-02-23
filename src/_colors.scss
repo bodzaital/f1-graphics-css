@@ -44,3 +44,7 @@ $teams: (
 // 3. Loop over the teams.
 // 4. Create the class (e.g. .color-text-mercedes) and add the property (color: rgba(); or background-color: rgba();).
 // The end results are 20 classes, one for text, and one for background for the 10 teams.
+
+$grid-eliminated: rgb(118, 1, 15);
+$grid-ontrack: rgb(255, 255, 255);
+$grid-inpit: rgb(160, 160, 160);

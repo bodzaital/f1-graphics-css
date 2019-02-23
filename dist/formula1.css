@@ -71,7 +71,6 @@
   width: 480px;
 }
 .f1.nameplate-short .grid {
-  background-color: white;
   color: black;
   display: flex;
   align-items: center;
@@ -79,6 +78,16 @@
   font-size: 28px;
   border-radius: 1.6px;
   border-bottom-right-radius: 11.2px;
+}
+.f1.nameplate-short .grid.ontrack {
+  background-color: white;
+}
+.f1.nameplate-short .grid.inpit {
+  background-color: #a0a0a0;
+}
+.f1.nameplate-short .grid.eliminated {
+  background-color: #76010f;
+  color: white;
 }
 .f1.nameplate-short .grid span {
   transform: scaleX(0.8);
