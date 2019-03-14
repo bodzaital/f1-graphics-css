@@ -1,75 +1,73 @@
-.color-text-mercedes {
+.f1.nameplate-short .color-text-mercedes {
   color: #00d2be;
 }
-.color-text-ferrari {
+.f1.nameplate-short .color-text-ferrari {
   color: #dc0000;
 }
-.color-text-redbull {
+.f1.nameplate-short .color-text-redbull {
   color: #1e41ff;
 }
-.color-text-renault {
+.f1.nameplate-short .color-text-renault {
   color: #fff500;
 }
-.color-text-haas {
+.f1.nameplate-short .color-text-haas {
   color: #f0d787;
 }
-.color-text-tororosso {
+.f1.nameplate-short .color-text-tororosso {
   color: #469bff;
 }
-.color-text-williams {
+.f1.nameplate-short .color-text-williams {
   color: white;
 }
-.color-text-racingpoint {
+.f1.nameplate-short .color-text-racingpoint {
   color: #f596c8;
 }
-.color-text-alfaromeo {
+.f1.nameplate-short .color-text-alfaromeo {
   color: #9b0000;
 }
-.color-text-mclaren {
+.f1.nameplate-short .color-text-mclaren {
   color: #ff8700;
 }
-.color-bg-mercedes {
+.f1.nameplate-short .color-bg-mercedes {
   background-color: #00d2be;
 }
-.color-bg-ferrari {
+.f1.nameplate-short .color-bg-ferrari {
   background-color: #dc0000;
 }
-.color-bg-redbull {
+.f1.nameplate-short .color-bg-redbull {
   background-color: #1e41ff;
 }
-.color-bg-renault {
+.f1.nameplate-short .color-bg-renault {
   background-color: #fff500;
 }
-.color-bg-haas {
+.f1.nameplate-short .color-bg-haas {
   background-color: #f0d787;
 }
-.color-bg-tororosso {
+.f1.nameplate-short .color-bg-tororosso {
   background-color: #469bff;
 }
-.color-bg-williams {
+.f1.nameplate-short .color-bg-williams {
   background-color: white;
 }
-.color-bg-racingpoint {
+.f1.nameplate-short .color-bg-racingpoint {
   background-color: #f596c8;
 }
-.color-bg-alfaromeo {
+.f1.nameplate-short .color-bg-alfaromeo {
   background-color: #9b0000;
 }
-.color-bg-mclaren {
+.f1.nameplate-short .color-bg-mclaren {
   background-color: #ff8700;
 }
-
-.grid-inpit {
+.f1.nameplate-short .grid.grid-inpit {
   background-color: #a0a0a0;
 }
-.grid-ontrack {
+.f1.nameplate-short .grid.grid-ontrack {
   background-color: white;
 }
-.grid-eliminated {
+.f1.nameplate-short .grid.grid-eliminated {
   background-color: #76010f;
   color: white;
 }
-
 .f1.nameplate-short {
   margin-bottom: 8px;
   font-family: "Formula1 Display";

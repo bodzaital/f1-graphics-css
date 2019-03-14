@@ -12,12 +12,12 @@
 $b: 16px;
 $nameplate-multiplier: 30;
 
-@import "_colors";
 
 .f1
 {
 	&.nameplate-short
 	{
+		@import "_colors";
 		@import "_nameplate-short";
 	}
 }
