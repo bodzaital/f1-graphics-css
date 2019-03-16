@@ -45,7 +45,7 @@
 				},
 				{
 					"grid":  {
-						"position": 2,
+						"position": 3,
 						"state": "ontrack"
 					},
 					"color": "ferrari",
@@ -57,7 +57,7 @@
 				},
 				{
 					"grid":  {
-						"position": 3,
+						"position": 2,
 						"state": "ontrack"
 					},
 					"color": "alfaromeo",
@@ -81,7 +81,7 @@
 				},
 				{
 					"grid":  {
-						"position": 5,
+						"position": 2,
 						"state": "ontrack"
 					},
 					"color": "mercedes",
@@ -93,8 +93,8 @@
 				},
 				{
 					"grid":  {
-						"position": 6,
-						"state": "ontrack"
+						"position": 12,
+						"state": "inpit"
 					},
 					"color": "renault",
 					"firstname": "Daniel",
@@ -105,8 +105,8 @@
 				},
 				{
 					"grid":  {
-						"position": 7,
-						"state": "ontrack"
+						"position": 11,
+						"state": "inpit"
 					},
 					"color": "renault",
 					"firstname": "Nico",
@@ -117,7 +117,7 @@
 				},
 				{
 					"grid":  {
-						"position": 8,
+						"position": 10,
 						"state": "ontrack"
 					},
 					"color": "racingpoint",
@@ -129,7 +129,7 @@
 				},
 				{
 					"grid":  {
-						"position": 9,
+						"position": 7,
 						"state": "ontrack"
 					},
 					"color": "haas",
@@ -141,8 +141,8 @@
 				},
 				{
 					"grid":  {
-						"position": 10,
-						"state": "inpit"
+						"position": 18,
+						"state": "eliminated"
 					},
 					"color": "mclaren",
 					"firstname": "Carlos",
@@ -153,8 +153,8 @@
 				},
 				{
 					"grid":  {
-						"position": 11,
-						"state": "inpit"
+						"position": 5,
+						"state": "ontrack"
 					},
 					"color": "ferrari",
 					"firstname": "Charles",
@@ -177,8 +177,8 @@
 				},
 				{
 					"grid":  {
-						"position": 13,
-						"state": "inpit"
+						"position": 17,
+						"state": "eliminated"
 					},
 					"color": "redbull",
 					"firstname": "Pierre",
@@ -189,8 +189,8 @@
 				},
 				{
 					"grid":  {
-						"position": 14,
-						"state": "inpit"
+						"position": 16,
+						"state": "eliminated"
 					},
 					"color": "racingpoint",
 					"firstname": "Lance",
@@ -201,7 +201,7 @@
 				},
 				{
 					"grid":  {
-						"position": 15,
+						"position": 13,
 						"state": "inpit"
 					},
 					"color": "tororosso",
@@ -213,8 +213,8 @@
 				},
 				{
 					"grid":  {
-						"position": 16,
-						"state": "eliminated"
+						"position": 14,
+						"state": "inpit"
 					},
 					"color": "alfaromeo",
 					"firstname": "Antonio",
@@ -225,8 +225,8 @@
 				},
 				{
 					"grid":  {
-						"position": 17,
-						"state": "eliminated"
+						"position": 15,
+						"state": "inpit"
 					},
 					"color": "tororosso",
 					"firstname": "Daniil",
@@ -237,7 +237,7 @@
 				},
 				{
 					"grid":  {
-						"position": 18,
+						"position": 19,
 						"state": "eliminated"
 					},
 					"color": "williams",
@@ -249,8 +249,8 @@
 				},
 				{
 					"grid":  {
-						"position": 19,
-						"state": "eliminated"
+						"position": 8,
+						"state": "ontrack"
 					},
 					"color": "mclaren",
 					"firstname": "Lando",
@@ -273,6 +273,8 @@
 				}
 			]
 		};
+		
+		drivers.drivers.sort((a, b) => (a.grid.position > b.grid.position) ? 1 : -1);
 
 		for (let i = 0; i < drivers.drivers.length; i++) {
 			let e = drivers.drivers[i];
