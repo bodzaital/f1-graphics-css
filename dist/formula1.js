@@ -24,22 +24,35 @@ function NewNameplate(json, target) {
 	firstname.innerText = json.firstname;
 	let lastname = ElementAndClass("span", "lastname");
 	lastname.innerText = json.lastname;
+	let number = ElementAndClass("span", `number color-glow-${json.color}`);
+	number.innerText = json.number;
 	name.appendChild(firstname);
 	name.appendChild(lastname);
+	name.appendChild(number);
 	let team = ElementAndClass("div", "constructor");
 	team.innerText = json.constructor;
 	driver.appendChild(name);
 	driver.appendChild(team);
 	a.appendChild(driver);
 
-	let ident = ElementAndClass("div", `ident color-text-${json.color}`);
-	let number = ElementAndClass("div", "number");
-	number.innerText = json.number;
-	let abbr = ElementAndClass("div", "abbreviation");
-	abbr.innerText = json.abbreviation;
-	ident.appendChild(number);
-	ident.appendChild(abbr);
-	a.appendChild(ident);
+	let flag_container = ElementAndClass("div", "flag-container");
+	let primary_gloss = ElementAndClass("div", "primary-gloss");
+	let secondary_gloss = ElementAndClass("div", "secondary-gloss");
+
+	let driver_nationality = ElementAndClass("div", "driver-nationality");
+	driver_nationality.style = `background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%), url('https://flagcdn.com/${json.nationality}.svg');`;
+
+	let secondary_overlay = ElementAndClass("div", "secondary-overlay");
+	let shadow = ElementAndClass("div", "shadow");
+
+	driver_nationality.appendChild(secondary_overlay);
+	driver_nationality.appendChild(shadow);
+
+	flag_container.appendChild(primary_gloss);
+	flag_container.appendChild(secondary_gloss);
+	flag_container.appendChild(driver_nationality);
+
+	a.appendChild(flag_container);
 
 	document.querySelector(target).appendChild(a);
 
