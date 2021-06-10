@@ -7,16 +7,16 @@ $color-types: (
 
 // Context: (class-name, css-value).
 $teams: (
-	("mercedes",	rgb(0,   210, 190)),
-	("ferrari",		rgb(220,   0,   0)),
-	("redbull",		rgb(30,   65, 255)),
-	("renault",		rgb(255, 245,   0)),
-	("haas",		rgb(240, 215, 135)),
-	("tororosso",	rgb(70,  155, 255)),
-	("williams",	rgb(255, 255, 255)),
-	("racingpoint",	rgb(245, 150, 200)),
-	("alfaromeo",	rgb(155,   0,   0)),
-	("mclaren",		rgb(255, 135,   0))
+	("mercedes",	#00d2be),
+	("ferrari",		#dc0000),
+	("redbull",		#0600ef),
+	("alpine",		#0090ff),
+	("haas",		#ffffff),
+	("alphatauri",	#2b4562),
+	("williams",	#005aff),
+	("astonmartin",	#006f62),
+	("alfaromeo",	#900000),
+	("mclaren",		#ff8700)
 );
 
 .color-
