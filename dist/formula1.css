@@ -109,6 +109,7 @@
   border-bottom-right-radius: 11.2px;
   width: 480px;
   overflow: hidden;
+  position: relative;
 }
 .f1.nameplate-short .grid {
   color: black;
@@ -196,7 +197,9 @@
   clip-path: polygon(80% 0, 33% 100%, 37% 100%, 80% 0);
 }
 .f1.nameplate-short .flag-container {
-  position: relative;
+  position: absolute;
+  height: 100%;
+  right: 0;
   margin: -4.8px;
   margin-left: auto;
   filter: blur(1.0666666667px);

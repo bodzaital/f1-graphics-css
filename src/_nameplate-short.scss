@@ -12,6 +12,7 @@
 
 	// For the country flag to be clipped in the corner.
 	overflow: hidden;
+	position: relative;
 }
 
 .grid
@@ -140,7 +141,9 @@
 
 .flag-container
 {
-	position: relative;
+	position: absolute;
+	height: 100%;
+	right: 0;
 
 	// To counter the padding of the nameplate.
 	margin: -1 * $b * .3;
