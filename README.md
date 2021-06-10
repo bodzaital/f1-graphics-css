@@ -1,3 +1,5 @@
+[There's a 2021 version here](https://github.com/bodzaital/f1-graphics-css/tree/v2021). In the future, both version will be included in the same file.
+
 ![F1 TV graphics in CSS](images/header.png)
 
 ## Usage
