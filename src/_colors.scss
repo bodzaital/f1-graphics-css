@@ -31,6 +31,7 @@ $teams: (
 				// E.g. mercedes
 				&#{nth($team, 1)}
 				{
+					// For glow, text-shadow needs more properties.
 					@if #{nth($color-type, 1)} == "glow"
 					{
 						#{nth($color-type, 2)}: 0 0 $b / 2 #{nth($team, 2)}, 0 0 $b / 2 #{nth($team, 2)};
