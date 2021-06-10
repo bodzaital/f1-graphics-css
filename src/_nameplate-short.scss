@@ -9,6 +9,9 @@
 	@include rad-border;
 
 	width: $b * $nameplate-multiplier;
+
+	// For the country flag to be clipped in the corner.
+	overflow: hidden;
 }
 
 .grid
@@ -95,5 +98,75 @@
 	{
 		font-size: $b * .8;
 		text-transform: uppercase;
+	}
+}
+
+.driver-nationality
+{
+	// To position the child element.
+	position: relative;
+
+	width: $b*7;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	opacity: .75;
+
+	clip-path: polygon(45% 0, 0 100%, 55% 100%, 100% 0);
+
+	.secondary-overlay
+	{
+		background-image: linear-gradient(to top right, transparent 0%, rgba(0, 0, 0, 1) 100%);
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		clip-path: polygon(80% 0, 35% 100%, 55% 100%, 100% 0);
+	}
+
+	.shadow
+	{
+		position: absolute;
+		background-color: black;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		clip-path: polygon(80% 0, 33% 100%, 37% 100%, 80% 0);
+	}
+}
+
+.flag-container
+{
+	position: relative;
+
+	// To counter the padding of the nameplate.
+	margin: -1 * $b * .3;
+	margin-left: auto;
+	filter: blur($b / 15);
+}
+
+.gloss
+{
+	position: absolute;
+	top: 0;
+	left: -2 * $b;
+	height: 100%;
+	width: 5 * $b + $b * .3 / 2;
+
+	&.primary-gloss
+	{
+		clip-path: polygon(30% 100%, 40% 100%, 100% 0, 90% 0);
+		background-image: linear-gradient(220deg, black 5%, transparent 40%, black 75%),
+						  linear-gradient(130deg, rgba(255, 255, 255, .4) 55%,  rgba(255, 255, 255, 0) 63%);
+	}
+
+	&.secondary-gloss
+	{
+		clip-path: polygon(60% 0, 0 100%, 30% 100%, 90% 0);
+		background-image: linear-gradient(220deg, black 0%, transparent 40%, transparent 60%, black 100%),
+						  linear-gradient(220deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .1));
 	}
 }
