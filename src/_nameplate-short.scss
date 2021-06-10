@@ -64,6 +64,12 @@
 			font-weight: bold;
 			text-transform: uppercase;
 		}
+
+		.number
+		{
+			font-style: italic;
+			margin-left: $b * 1.5;
+		}
 	}
 
 	.constructor

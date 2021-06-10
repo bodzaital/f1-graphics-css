@@ -1,7 +1,8 @@
 // Context: (class-name, css-property).
 $color-types: (
 	("text", "color"),
-	("bg", "background-color")
+	("bg", "background-color"),
+	("glow", "text-shadow")
 );
 
 // Context: (class-name, css-value).
@@ -30,8 +31,15 @@ $teams: (
 				// E.g. mercedes
 				&#{nth($team, 1)}
 				{
-					// E.g. color: rgb(0, 210, 190);
-					#{nth($color-type, 2)}: #{nth($team, 2)};
+					@if #{nth($color-type, 1)} == "glow"
+					{
+						#{nth($color-type, 2)}: 0 0 $b / 2 #{nth($team, 2)}, 0 0 $b / 2 #{nth($team, 2)};
+					}
+					@else
+					{
+						// E.g. color: rgb(0, 210, 190);
+						#{nth($color-type, 2)}: #{nth($team, 2)};
+					}
 				}
 			}
 		}

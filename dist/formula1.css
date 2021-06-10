@@ -1,3 +1,7 @@
+* {
+  outline: 1px solid red;
+}
+
 .f1.nameplate-short .color-text-mercedes {
   color: #00d2be;
 }
@@ -58,6 +62,36 @@
 .f1.nameplate-short .color-bg-mclaren {
   background-color: #ff8700;
 }
+.f1.nameplate-short .color-glow-mercedes {
+  text-shadow: 0 0 8px #00d2be, 0 0 8px #00d2be;
+}
+.f1.nameplate-short .color-glow-ferrari {
+  text-shadow: 0 0 8px #dc0000, 0 0 8px #dc0000;
+}
+.f1.nameplate-short .color-glow-redbull {
+  text-shadow: 0 0 8px #1e41ff, 0 0 8px #1e41ff;
+}
+.f1.nameplate-short .color-glow-renault {
+  text-shadow: 0 0 8px #fff500, 0 0 8px #fff500;
+}
+.f1.nameplate-short .color-glow-haas {
+  text-shadow: 0 0 8px #f0d787, 0 0 8px #f0d787;
+}
+.f1.nameplate-short .color-glow-tororosso {
+  text-shadow: 0 0 8px #469bff, 0 0 8px #469bff;
+}
+.f1.nameplate-short .color-glow-williams {
+  text-shadow: 0 0 8px white, 0 0 8px white;
+}
+.f1.nameplate-short .color-glow-racingpoint {
+  text-shadow: 0 0 8px #f596c8, 0 0 8px #f596c8;
+}
+.f1.nameplate-short .color-glow-alfaromeo {
+  text-shadow: 0 0 8px #9b0000, 0 0 8px #9b0000;
+}
+.f1.nameplate-short .color-glow-mclaren {
+  text-shadow: 0 0 8px #ff8700, 0 0 8px #ff8700;
+}
 .f1.nameplate-short .grid.grid-inpit {
   background-color: #a0a0a0;
 }
@@ -116,6 +150,10 @@
 .f1.nameplate-short .driver .name .lastname {
   font-weight: bold;
   text-transform: uppercase;
+}
+.f1.nameplate-short .driver .name .number {
+  font-style: italic;
+  margin-left: 24px;
 }
 .f1.nameplate-short .driver .constructor {
   font-size: 14.4px;
