@@ -1,52 +1,36 @@
-![F1 TV graphics in CSS](images/header.png)
+![F1 TV graphics in CSS](images/header-v2021.png)
+
+*Updated driver nameplates for the 2021 world feed*
 
 ## Usage
 
-Link to the CSS file in the head tag:
+1. Link to the CSS file in the head element:
 
 ```html
-<link rel="stylesheet" href="formula1.css">
+<head>
+	...
+	<link rel="stylesheet" href="formula1.css">
+	...
+</head>
 ```
 
-You can either type the HTML out by hand, or use the script `formula1.js` within `dist/`.
-
-### By hand
-
-The format is the following:
+2. Link to the JS file at the bottom of the body element:
 
 ```html
-<div class="f1 nameplate-short">
-    <div class="grid grid-[grid-state]">
-        <span>[grid-position]</span>
-    </div>
-    <div class="separator">
-        <div class="color-bg-[team]"></div>
-    </div>
-    <div class="driver">
-        <div class="name">
-            <span class="firstname">[first-name]</span><span class="lastname">[last-name]</span>
-        </div>
-        <div class="constructor">[constructor-name]</div>
-    </div>
-    <div class="ident">
-        <div class="number">[driver-number]</div>
-        <div class="abbreviation">[driver-abbreviation]</div>
-    </div>
-</div>
+<body>
+	...
+	<script src="formula1.js"></script>
+</body>
 ```
 
-### With script
+3. Generate nameplates with the context objects: 
 
-To create name plates automatically, add the following line just before the closing body tag:
+`NewNameplate(context, target)`: adds a new nameplate as the target element's child.
 
-```html
-<script src="formula1.js"></script>
-```
-
-Then, after you included the script file, call `NewNameplate(json, target)`, which creates and inserts the name plate into the DOM. It takes a JSON object and the parent element's selector to where you want to place it. The JSON object has this context:
+*Example:*
 
 ```json
-{
+driver = {
     "grid": {
         "position": 1,
         "state": "ontrack"
@@ -56,11 +40,12 @@ Then, after you included the script file, call `NewNameplate(json, target)`, whi
     "lastname": "Kubica",
     "constructor": "Williams",
     "number": 88,
-    "abbreviation": "KUB"
+    "abbreviation": "KUB",
+	"nationality": "pl"
 }
+
+NewNameplate("driver", "body");
 ```
-
-
 
 The driver's last name and abbreviation is automatically capitalized by the CSS. 
 
@@ -74,17 +59,33 @@ To create custom colors (see below), you need a Sass compiler.
 
 ## Differences
 
-The world feed uses a slightly different font (see: capital `M`). Sizes are not the exact same between the world feed and the CSS. The colors are taken from [this reddit post](https://www.reddit.com/r/formula1/comments/arxt0r/f1_2019_team_colors_hex_codes/). TV compression may render colors and shapes in a different way.
+The world feed uses a slightly different font (see: capital `M`). Sizes are not the exact same between the world feed and the CSS. The 2021 colors are taken from [this reddit post](https://www.reddit.com/r/formula1/comments/m18iwo/new_team_colors_again_from_formula1com_compared/). TV compression may render colors and shapes in a different way.
+
+The flags are automatically downloaded from flagcdn.com. The proportions and the visible parts, and effects are different than those on the world feed. For available flags, see https://flagcdn.com/en/codes.json.
+
+There's a bug where the glow/sheen effect to the left of the flag are missing — this will be fixed later.
 
 ## Comparison
+
+### v2018
 
 TV broadcast graphics:
 
 ![Captured TV broadcast graphics.](images/screenshot-tv.png)
 
-Recreated using CSS (from test.html):
+Recreated using CSS:
 
 ![Recreated TV graphics.](images/screenshot-cssv2.png)
+
+### v2021
+
+TV broadcast graphics:
+
+![Captured TV broadcast graphics.](images/screenshot-tv-v2021.png)
+
+Recreated using CSS (from test.html):
+
+![Recreated TV graphics.](images/screenshot-v2021.png)
 
 ## Grid colors
 
