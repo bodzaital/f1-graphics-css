@@ -72,7 +72,7 @@
 		.number
 		{
 			font-style: italic;
-			margin-left: $b * 1.5;
+			margin-left: $b;
 		}
 	}
 
@@ -108,9 +108,9 @@
 	position: relative;
 
 	width: $b*7;
-	height: 100%;
+	height: 80%;
 	background-position: center;
-	background-size: cover;
+	// background-size: cover;
 	background-repeat: no-repeat;
 
 	opacity: .75;
@@ -144,32 +144,10 @@
 	position: absolute;
 	height: 100%;
 	right: 0;
+	display: flex;
+	align-items: center;
 
 	// To counter the padding of the nameplate.
 	margin: -1 * $b * .3;
 	margin-left: auto;
-	filter: blur($b / 15);
-}
-
-.gloss
-{
-	position: absolute;
-	top: 0;
-	left: -2 * $b;
-	height: 100%;
-	width: 5 * $b + $b * .3 / 2;
-
-	&.primary-gloss
-	{
-		clip-path: polygon(30% 100%, 40% 100%, 100% 0, 90% 0);
-		background-image: linear-gradient(220deg, black 5%, transparent 40%, black 75%),
-						  linear-gradient(130deg, rgba(255, 255, 255, .4) 55%,  rgba(255, 255, 255, 0) 63%);
-	}
-
-	&.secondary-gloss
-	{
-		clip-path: polygon(60% 0, 0 100%, 30% 100%, 90% 0);
-		background-image: linear-gradient(220deg, black 0%, transparent 40%, transparent 60%, black 100%),
-						  linear-gradient(220deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .1));
-	}
 }

@@ -40,7 +40,10 @@ function NewNameplate(json, target) {
 	let secondary_gloss = ElementAndClass("div", "secondary-gloss");
 
 	let driver_nationality = ElementAndClass("div", "driver-nationality");
-	driver_nationality.style = `background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%), url('https://flagcdn.com/${json.nationality}.svg');`;
+	// Turning off SVG.preserveAspectRatio: https://stackoverflow.com/a/29257727
+	driver_nationality.style.backgroundImage = `linear-gradient(to bottom left, black 0%, transparent 30%, transparent 70%, black 100%), url('https://flagcdn.com/${json.nationality}.svg#svgView(preserveAspectRatio(none))'), linear-gradient(to bottom left, ${json.flagbg}, ${json.flagbg})`;
+	
+	driver_nationality.style.backgroundSize = json.flagsize;
 
 	let secondary_overlay = ElementAndClass("div", "secondary-overlay");
 	let shadow = ElementAndClass("div", "shadow");
@@ -51,7 +54,7 @@ function NewNameplate(json, target) {
 	flag_container.appendChild(primary_gloss);
 	flag_container.appendChild(secondary_gloss);
 	flag_container.appendChild(driver_nationality);
-
+	
 	a.appendChild(flag_container);
 
 	document.querySelector(target).appendChild(a);
