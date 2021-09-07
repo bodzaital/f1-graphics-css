@@ -1,58 +1,66 @@
 'use strict';
-function ElementAndClass(x, y) {
-    let a = document.createElement(x);
-    a.classList = y;
-    return a;
+class Grid {
+}
+class Driver {
+}
+function CreateElement(elementName, classList = null) {
+    let element = document.createElement(elementName);
+    if (classList != null) {
+        classList.forEach((list) => {
+            element.classList.add(list);
+        });
+    }
+    return element;
 }
 function NewNameplate(json, target) {
-    let a = ElementAndClass("div", "f1 nameplate-short");
-    let grid = ElementAndClass("div", `grid grid-${json.grid.state}`);
-    let span = document.createElement("span");
-    span.innerText = json.grid.position;
+    let container = CreateElement("div", ["f1", "nameplate-short"]);
+    // Create the grid position box.
+    let grid = CreateElement("div", ["grid", `grid-${json.grid.state}`]);
+    let span = CreateElement("span");
+    span.innerText = json.grid.position.toString();
     grid.appendChild(span);
-    a.appendChild(grid);
-    let sep = ElementAndClass("div", "separator");
-    let sep_inner = ElementAndClass("div", `color-bg-${json.color}`);
-    sep.appendChild(sep_inner);
-    a.appendChild(sep);
-    let driver = ElementAndClass("div", "driver");
-    let name = ElementAndClass("div", "name");
-    let firstname = ElementAndClass("span", "firstname");
+    container.appendChild(grid);
+    // Create the team colored separator.
+    let separator_container = CreateElement("div", ["separator"]);
+    let separator = CreateElement("div", [`color-bg-${json.color}`]);
+    separator_container.appendChild(separator);
+    container.appendChild(separator_container);
+    // Create the driver name.
+    let driver = CreateElement("div", ["driver"]);
+    let name = CreateElement("div", ["name"]);
+    let firstname = CreateElement("span", ["firstname"]);
     firstname.innerText = json.firstname;
-    let lastname = ElementAndClass("span", "lastname");
+    let lastname = CreateElement("span", ["lastname"]);
     lastname.innerText = json.lastname;
-    let number = ElementAndClass("span", `number color-glow-${json.color}`);
-    number.innerText = json.number;
+    let number = CreateElement("span", ["number", `color-glow-${json.color}`]);
+    number.innerText = json.number.toString();
     name.appendChild(firstname);
     name.appendChild(lastname);
     name.appendChild(number);
-    let team = ElementAndClass("div", "constructor");
-    team.innerText = json.constructor;
+    let team = CreateElement("div", ["constructor"]);
+    team.innerText = json.team;
     driver.appendChild(name);
     driver.appendChild(team);
-    a.appendChild(driver);
-    let flag_container = ElementAndClass("div", "flag-container");
-    let primary_gloss = ElementAndClass("div", "primary-gloss");
-    let secondary_gloss = ElementAndClass("div", "secondary-gloss");
-    let driver_nationality = ElementAndClass("div", "driver-nationality");
+    container.appendChild(driver);
+    // Create the flag.
+    let flag_container = CreateElement("div", ["flag-container"]);
+    let flag = CreateElement("div", ["driver-nationality"]);
     // Turning off SVG.preserveAspectRatio: https://stackoverflow.com/a/29257727
-    driver_nationality.style.backgroundImage = `linear-gradient(to bottom left, black 0%, transparent 30%, transparent 70%, black 100%), url('https://flagcdn.com/${json.nationality}.svg#svgView(preserveAspectRatio(none))'), linear-gradient(to bottom left, ${json.flagbg}, ${json.flagbg})`;
-    driver_nationality.style.backgroundSize = json.flagsize;
-    let secondary_overlay = ElementAndClass("div", "secondary-overlay");
-    let shadow = ElementAndClass("div", "shadow");
-    driver_nationality.appendChild(secondary_overlay);
-    driver_nationality.appendChild(shadow);
-    flag_container.appendChild(primary_gloss);
-    flag_container.appendChild(secondary_gloss);
-    flag_container.appendChild(driver_nationality);
-    a.appendChild(flag_container);
-    document.querySelector(target).appendChild(a);
+    flag.style.backgroundImage = `linear-gradient(to bottom left, black 0%, transparent 30%, transparent 70%, black 100%), url('https://flagcdn.com/${json.nationality}.svg#svgView(preserveAspectRatio(none))'), linear-gradient(to bottom left, ${json.flagbg}, ${json.flagbg})`;
+    flag.style.backgroundSize = json.flagsize;
+    let secondary_overlay = CreateElement("div", ["secondary-overlay"]);
+    let shadow = CreateElement("div", ["shadow"]);
+    flag.appendChild(secondary_overlay);
+    flag.appendChild(shadow);
+    flag_container.appendChild(flag);
+    container.appendChild(flag_container);
+    document.querySelector(target).appendChild(container);
     FixGridWidth();
 }
 // Make the grid position the same width as height. Cannot be done in CSS as the height is dynamic.
 function FixGridWidth() {
     let q = document.querySelectorAll(".grid");
-    q.forEach(e => {
+    q.forEach((e) => {
         e.style.width = `${e.clientHeight}px`;
     });
 }
