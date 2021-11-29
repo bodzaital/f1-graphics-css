@@ -1,0 +1,204 @@
+@font-face {
+  font-family: "f1-regular";
+  src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1Regular/Formula1-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "f1-italic";
+  src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1RegularItalic/Formula1-Italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "f1-bold";
+  src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1Bold/Formula1-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "f1-black";
+  src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1Black/Formula1-Black.woff2") format("woff2");
+}
+@font-face {
+  font-family: "f1-wide";
+  src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1Wide/Formula1-Wide.woff2") format("woff2");
+}
+@font-face {
+  font-family: "f1-year";
+  src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1YEAR/F1YEARRegular.woff2") format("woff2");
+}
+.color-text-mercedes {
+  color: #00d2be;
+}
+.color-text-ferrari {
+  color: #dc0000;
+}
+.color-text-redbull {
+  color: #0600ef;
+}
+.color-text-alpine {
+  color: #0090ff;
+}
+.color-text-haas {
+  color: #ffffff;
+}
+.color-text-alphatauri {
+  color: #2b4562;
+}
+.color-text-williams {
+  color: #005aff;
+}
+.color-text-astonmartin {
+  color: #006f62;
+}
+.color-text-alfaromeo {
+  color: #900000;
+}
+.color-text-mclaren {
+  color: #ff8700;
+}
+.color-bg-mercedes {
+  background-color: #00d2be;
+}
+.color-bg-ferrari {
+  background-color: #dc0000;
+}
+.color-bg-redbull {
+  background-color: #0600ef;
+}
+.color-bg-alpine {
+  background-color: #0090ff;
+}
+.color-bg-haas {
+  background-color: #ffffff;
+}
+.color-bg-alphatauri {
+  background-color: #2b4562;
+}
+.color-bg-williams {
+  background-color: #005aff;
+}
+.color-bg-astonmartin {
+  background-color: #006f62;
+}
+.color-bg-alfaromeo {
+  background-color: #900000;
+}
+.color-bg-mclaren {
+  background-color: #ff8700;
+}
+.color-glow-mercedes {
+  text-shadow: 0 0 8px #00d2be, 0 0 8px #00d2be;
+}
+.color-glow-ferrari {
+  text-shadow: 0 0 8px #dc0000, 0 0 8px #dc0000;
+}
+.color-glow-redbull {
+  text-shadow: 0 0 8px #0600ef, 0 0 8px #0600ef;
+}
+.color-glow-alpine {
+  text-shadow: 0 0 8px #0090ff, 0 0 8px #0090ff;
+}
+.color-glow-haas {
+  text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff;
+}
+.color-glow-alphatauri {
+  text-shadow: 0 0 8px #2b4562, 0 0 8px #2b4562;
+}
+.color-glow-williams {
+  text-shadow: 0 0 8px #005aff, 0 0 8px #005aff;
+}
+.color-glow-astonmartin {
+  text-shadow: 0 0 8px #006f62, 0 0 8px #006f62;
+}
+.color-glow-alfaromeo {
+  text-shadow: 0 0 8px #900000, 0 0 8px #900000;
+}
+.color-glow-mclaren {
+  text-shadow: 0 0 8px #ff8700, 0 0 8px #ff8700;
+}
+
+.grid.grid-inpit {
+  background-color: #a0a0a0;
+}
+.grid.grid-ontrack {
+  background-color: white;
+}
+.grid.grid-eliminated {
+  background-color: #76010f;
+  color: white;
+}
+
+.f1.nameplate-short {
+  font-variant-ligatures: none;
+  font-family: "f1-regular";
+  background-color: black;
+  color: white;
+  display: flex;
+  height: 3.25rem;
+  width: 25.5rem;
+  overflow: hidden;
+}
+.f1.nameplate-short div {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.f1.nameplate-short .position {
+  aspect-ratio: 1;
+  margin: 0.25rem 0 0.25rem 0.25rem;
+  border-top-left-radius: 0.1rem;
+  border-top-right-radius: 0.1rem;
+  border-bottom-right-radius: 0.4rem;
+  border-bottom-left-radius: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.f1.nameplate-short .position.ontrack {
+  background-color: white;
+  color: black;
+}
+.f1.nameplate-short .separator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.25rem 0.35rem;
+}
+.f1.nameplate-short .separator div {
+  width: 0.2rem;
+  height: 70%;
+}
+.f1.nameplate-short .separator div.redbull {
+  background-color: #0600ef;
+}
+.f1.nameplate-short .name-and-team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.15rem;
+  letter-spacing: 0.05rem;
+}
+.f1.nameplate-short .name-and-team .name-and-number {
+  display: flex;
+  gap: 0.5rem;
+}
+.f1.nameplate-short .name-and-team .name-and-number .name {
+  font-size: 1.1rem;
+}
+.f1.nameplate-short .name-and-team .name-and-number .name .lastname {
+  font-family: "f1-bold";
+}
+.f1.nameplate-short .name-and-team .name-and-number .number {
+  font-size: 1.1rem;
+  font-family: "f1-italic";
+}
+.f1.nameplate-short .name-and-team .team {
+  color: #cccccc;
+  font-size: 0.85rem;
+}
+.f1.nameplate-short .flag {
+  margin: 0.25rem 0.25rem 0.25rem 2rem;
+  background-image: linear-gradient(65deg, black 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 60%, black 80%), url("https://flagcdn.com/nl.svg");
+  background-size: contain;
+  width: 6rem;
+  clip-path: polygon(0 100%, 40% 0, 80% 0, 80% 50%, 60% 100%);
+}
+
+/*# sourceMappingURL=formula1_v2.css.map */

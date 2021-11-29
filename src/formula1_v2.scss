@@ -1,0 +1,113 @@
+@use "fonts";
+@use "colors";
+
+$rem: 16px;
+
+@mixin border-radius($tl, $tr, $br, $bl) {
+	border-top-left-radius: $tl;
+	border-top-right-radius: $tr;
+	border-bottom-right-radius: $br;
+	border-bottom-left-radius: $bl;
+}
+
+// * { outline: 1px solid red; }
+
+.f1
+{
+	&.nameplate-short
+	{
+		font-variant-ligatures: none;
+		font-family: 'f1-regular';
+		background-color: black;
+		color: white;
+		display: flex;
+		height: 3.25rem;
+		width: 25.5rem;
+		overflow: hidden;
+
+		div { flex-grow: 0; flex-shrink: 0; }
+
+		.position
+		{
+			aspect-ratio: 1;
+			margin: .25rem 0 .25rem .25rem;
+			@include border-radius(.1rem, .1rem, .4rem, .1rem);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.5rem;
+
+			&.ontrack
+			{
+				background-color: white;
+				color: black;
+			}
+		}
+
+		.separator
+		{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin: .25rem .35rem;
+
+			div
+			{
+				width: .2rem;
+				height: 70%;
+
+				&.redbull
+				{
+					background-color: #0600ef;
+				}
+			}
+		}
+		
+		.name-and-team
+		{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: .15rem;
+			letter-spacing: .05rem;
+
+			.name-and-number
+			{
+				display: flex;
+				gap: .5rem;
+
+				.name
+				{
+					font-size: 1.1rem;
+
+					.lastname
+					{
+						font-family: 'f1-bold';
+					}
+				}
+
+				.number
+				{
+					font-size: 1.1rem;
+					font-family: 'f1-italic';					
+				}
+			}
+
+			.team
+			{
+				color: #cccccc;
+				font-size: .85rem;
+			}
+		}
+
+		.flag
+		{
+			margin: .25rem .25rem .25rem 2rem;
+			background-image: linear-gradient(65deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 80%), url('https://flagcdn.com/nl.svg');
+			background-size: contain;
+			width: 6rem;
+			clip-path: polygon(0 100%, 40% 0, 80% 0, 80% 50%, 60% 100%);
+		}
+	}
+}

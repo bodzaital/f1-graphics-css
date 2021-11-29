@@ -1,3 +1,5 @@
+$rem: 16px;
+
 // Context: (class-name, css-property).
 $color-types: (
 	("text", "color"),
@@ -34,7 +36,7 @@ $teams: (
 					// For glow, text-shadow needs more properties.
 					@if #{nth($color-type, 1)} == "glow"
 					{
-						#{nth($color-type, 2)}: 0 0 $b / 2 #{nth($team, 2)}, 0 0 $b / 2 #{nth($team, 2)};
+						#{nth($color-type, 2)}: 0 0 $rem / 2 #{nth($team, 2)}, 0 0 $rem / 2 #{nth($team, 2)};
 					}
 					@else
 					{
