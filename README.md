@@ -1,154 +1,122 @@
-[There's a 2021 version here](https://github.com/bodzaital/f1-graphics-css/tree/v2021). In the future, both version will be included in the same file.
+![F1 TV graphics in CSS](images/header-v2021.png)
 
-![F1 TV graphics in CSS](images/header.png)
+A small CSS file to emulate the 2021 TV graphics of the Formula 1 world feed.
 
 ## Usage
 
-Link to the CSS file in the head tag:
+1. Link to the CSS file in the head element:
 
 ```html
-<link rel="stylesheet" href="formula1.css">
+<head>
+	...
+	<link rel="stylesheet" href="formula1_v2.css">
+	...
+</head>
 ```
 
-You can either type the HTML out by hand, or use the script `formula1.js` within `dist/`.
-
-### By hand
-
-The format is the following:
+2. Link to the JS file at the bottom of the body element:
 
 ```html
-<div class="f1 nameplate-short">
-    <div class="grid grid-[grid-state]">
-        <span>[grid-position]</span>
-    </div>
-    <div class="separator">
-        <div class="color-bg-[team]"></div>
-    </div>
-    <div class="driver">
-        <div class="name">
-            <span class="firstname">[first-name]</span><span class="lastname">[last-name]</span>
-        </div>
-        <div class="constructor">[constructor-name]</div>
-    </div>
-    <div class="ident">
-        <div class="number">[driver-number]</div>
-        <div class="abbreviation">[driver-abbreviation]</div>
-    </div>
+<body>
+	...
+	<script src="formula1_v2.js"></script>
+</body>
+```
+
+3. Generate nameplates:
+
+Example:
+
+```html
+<div class="container">
+
 </div>
+<script src="../dist/formula1_v2.js"></script>
+<script>
+	let driver = {
+		"grid": {
+			"position": 1,
+			"state": "ontrack"
+		},
+		"color": "redbull",
+		"firstname": "Max",
+		"lastname": "Verstappen",
+		"team": "Red Bull",
+		"number": 33,
+		"abbreviation": "VER",
+		"flag": "nl"
+	};
+
+	new Nameplate(driver).Create(document.querySelector(".container"));
+</script>
 ```
 
-### With script
+1. Create a driver object that has the following fields:
 
-To create name plates automatically, add the following line just before the closing body tag:
-
-```html
-<script src="formula1.js"></script>
+```
+grid: {position: number, state: string}
+color: string
+firstname: string
+lastname: string
+team: string
+number: number
+abbreviation: string
+flag: string
 ```
 
-Then, after you included the script file, call `NewNameplate(json, target)`, which creates and inserts the name plate into the DOM. It takes a JSON object and the parent element's selector to where you want to place it. The JSON object has this context:
+The grid state can be one of `ontrack`, `inpit`, or `eliminated`.
 
-```json
-{
-    "grid": {
-        "position": 1,
-        "state": "ontrack"
-    },
-    "color": "williams",
-    "firstname": "Robert",
-    "lastname": "Kubica",
-    "constructor": "Williams",
-    "number": 88,
-    "abbreviation": "KUB"
-}
-```
+The color must be one of `mercedes`, `ferrari`, `redbull`, `alpine`, `alphatauri`, `haas`, `williams`, `astonmartin`, `alfaromeo`, `mclaren` or another defined color in `_colors.scss`.
 
+The flag must be an ISO 3166 country code defined in https://flagcdn.com/en/codes.json.
 
+2. Call `new Nameplate(driver).Create(target)`
 
-The driver's last name and abbreviation is automatically capitalized by the CSS. 
+`driver` is the driver object.
 
-For `color` and `grid.state`, see below.
+`target` is the target HTML element where the nameplate will be inserted.
+
 
 ## Prerequisites
 
-You need to install the `Formula1 Display` font to your system to render the text correctly.
+The fonts are directly linked from the F1 website.
 
 To create custom colors (see below), you need a Sass compiler.
 
 ## Differences
 
-The world feed uses a slightly different font (see: capital `M`). Sizes are not the exact same between the world feed and the CSS. The colors are taken from [this reddit post](https://www.reddit.com/r/formula1/comments/arxt0r/f1_2019_team_colors_hex_codes/). TV compression may render colors and shapes in a different way.
+The world feed uses a slightly different font (see: capital `M`). Sizes are not the exact same between the world feed and the CSS. The 2021 colors are taken from [this reddit post](https://www.reddit.com/r/formula1/comments/m18iwo/new_team_colors_again_from_formula1com_compared/). TV compression may render colors and shapes in a different way.
+
+The flags are automatically downloaded from flagcdn.com. The proportions and the visible parts, and effects are different than those on the world feed. For available flags, see https://flagcdn.com/en/codes.json.
+
+There's a bug where the glow/sheen effect to the left of the flag are missing — this will be fixed later.
 
 ## Comparison
 
 TV broadcast graphics:
 
-![Captured TV broadcast graphics.](images/screenshot-tv.png)
+![Captured TV broadcast graphics.](images/screenshot-tv-v2021.png)
 
 Recreated using CSS (from test.html):
 
-![Recreated TV graphics.](images/screenshot-cssv2.png)
-
-## Grid colors
-
-The grid position can be colored to three styles:
-
-- `"grid.state": "ontrack"`: black on white
-- `"grid.state": "inpit"`: black on gray
-- `"grid.state": "eliminated"`: white on red
-
-These can be used as the following classes:
-
-- `grid grid-ontrack`
-- `grid grid-inpit`
-- `grid grid-eliminated`
-
-![Grid colors: black on white, black on gray, and white on red.](images/grid-color.png)
-
-You can add custom grid colors by adding it either `$grid.blacktext` or `$grid.whitetext` lists:
-
-```scss
-$grid-blacktext: (
-    ("inpit",   rgb(160, 160, 160)),
-    ("ontrack", rgb(255, 255, 255)),
-    ("dnf",     rgb(255, 255, 0))
-);
-
-$grid-whitetext: (
-    ("inpit",   rgb(160, 160, 160)),
-    ("dns",     rgb(128, 255, 128))
-);
-```
+![Recreated TV graphics.](images/screenshot-v2021.png)
 
 ## Team colors
 
-Team colors are: `.color-[type]-[team]` where:
-
-- `[type]` is
-
-  - `text` for text color, or
-  - `bg` for background color
-
-- `[team]` is
-
-  - `mercedes`
-  - `ferrari`
-  - `redbull`
-  - `renault`
-  - `haas`
-  - `tororosso`
-  - `williams`
-  - `racingpoint`
-  - `alfaromeo`
-  - `mclaren`
-
-Example: `<div class="color-bg-mercedes"></div>`
-
-To add or change colors, add a new row to the `_colors.scss` partial's `$teams` variable like this:
+To add you own team color, edit the `src/_colors.scss` file, and add a new item in the `$teams` variable and recompile, like this:
 
 ```scss
 $teams: (
-	. . .
-	("alfaromeo",   rgb(155,   0,   0)),
-	("mclaren",     rgb(255, 135,   0)),
-	("my-team",     rgb(135, 135, 135))
+	("mercedes",	#00d2be),
+	("ferrari",		#dc0000),
+	("redbull",		#0600ef),
+	("alpine",		#0090ff),
+	("haas",		#ffffff),
+	("alphatauri",	#2b4562),
+	("williams",	#005aff),
+	("astonmartin",	#006f62),
+	("alfaromeo",	#900000),
+	("mclaren",		#ff8700),
+	("myteam",		#950245)
 );
+```
