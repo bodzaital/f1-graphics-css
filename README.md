@@ -1,6 +1,6 @@
 ![F1 TV graphics in CSS](images/header-v2021.png)
 
-A small CSS file to emulate the 2021 TV graphics of the Formula 1 world feed.
+A small CSS file to emulate the 2021 TV graphics of the Formula 1 world feed. The old 2018 version can be found [here](https://github.com/bodzaital/f1-graphics-css/tree/v2018)
 
 ## Usage
 
