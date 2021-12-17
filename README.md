@@ -89,8 +89,6 @@ The world feed uses a slightly different font (see: capital `M`). Sizes are not 
 
 The flags are automatically downloaded from flagcdn.com. The proportions and the visible parts, and effects are different than those on the world feed. For available flags, see https://flagcdn.com/en/codes.json.
 
-There's a bug where the glow/sheen effect to the left of the flag are missing — this will be fixed later.
-
 ## Comparison
 
 TV broadcast graphics:
