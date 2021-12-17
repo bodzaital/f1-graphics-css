@@ -6,20 +6,358 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>formula1_v2.css</title>
 	<link rel="stylesheet" href="../dist/formula1_v2.css">
+	<style>
+		.container
+		{
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+	</style>
 </head>
 <body>
-	<img src="../images/2021.png">
-	<div class="f1 nameplate-short">
-		<div class="position ontrack">20</div>
-		<div class="separator"><div class="redbull"></div></div>
-		<div class="name-and-team">
-			<div class="name-and-number">
-				<div class="name"><span class="firstname">Max</span> <span class="lastname">VERSTAPPEN</span></div>
-				<div class="number">33</div>
-			</div>
-			<div class="team">Red Bull Racing</div>
-		</div>
-		<div class="flag" data-flag="nl"></div>
+	<div class="container">
+
 	</div>
+	<script src="../dist/formula1_v2.js"></script>
+	<script>
+		let driver;
+		
+		driver = {
+			"grid": {
+				"position": 1,
+				"state": "ontrack"
+			},
+			"color": "redbull",
+			"firstname": "Max",
+			"lastname": "Verstappen",
+			"team": "Red Bull",
+			"number": 33,
+			"abbreviation": "VER",
+			"flag": "nl"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 2,
+				"state": "ontrack"
+			},
+			"color": "mercedes",
+			"firstname": "Lewis",
+			"lastname": "Hamilton",
+			"team": "Mercedes",
+			"number": 44,
+			"abbreviation": "HAM",
+			"flag": "gb"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 3,
+				"state": "ontrack"
+			},
+			"color": "mercedes",
+			"firstname": "Valtteri",
+			"lastname": "Bottas",
+			"team": "Mercedes",
+			"number": 77,
+			"abbreviation": "BOT",
+			"flag": "fi"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 4,
+				"state": "ontrack"
+			},
+			"color": "redbull",
+			"firstname": "Sergio",
+			"lastname": "Perez",
+			"team": "Red Bull",
+			"number": 11,
+			"abbreviation": "PER",
+			"flag": "mx"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 5,
+				"state": "ontrack"
+			},
+			"color": "ferrari",
+			"firstname": "Carlos",
+			"lastname": "Sainz",
+			"team": "Ferrari",
+			"number": 55,
+			"abbreviation": "SAI",
+			"flag": "es"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 6,
+				"state": "ontrack"
+			},
+			"color": "mclaren",
+			"firstname": "Lando",
+			"lastname": "Norris",
+			"team": "McLaren",
+			"number": 4,
+			"abbreviation": "NOR",
+			"flag": "gb"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 7,
+				"state": "ontrack"
+			},
+			"color": "ferrari",
+			"firstname": "Charles",
+			"lastname": "Leclerc",
+			"team": "Ferrari",
+			"number": 16,
+			"abbreviation": "LEC",
+			"flag": "mc"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 8,
+				"state": "ontrack"
+			},
+			"color": "mclaren",
+			"firstname": "Daniel",
+			"lastname": "Ricciardo",
+			"team": "McLaren",
+			"number": 3,
+			"abbreviation": "RIC",
+			"flag": "au"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 9,
+				"state": "ontrack"
+			},
+			"color": "alphatauri",
+			"firstname": "Pierre",
+			"lastname": "Gasly",
+			"team": "AlphaTauri",
+			"number": 10,
+			"abbreviation": "GAS",
+			"flag": "fr"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 10,
+				"state": "ontrack"
+			},
+			"color": "alpine",
+			"firstname": "Fernando",
+			"lastname": "Alonso",
+			"team": "Alpine",
+			"number": 14,
+			"abbreviation": "ALO",
+			"flag": "es"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 11,
+				"state": "inpit"
+			},
+			"color": "alpine",
+			"firstname": "Esteban",
+			"lastname": "Ocon",
+			"team": "Alpine",
+			"number": 31,
+			"abbreviation": "OCO",
+			"flag": "fr"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 12,
+				"state": "inpit"
+			},
+			"color": "astonmartin",
+			"firstname": "Sebastian",
+			"lastname": "Vettel",
+			"team": "Aston Martin",
+			"number": 5,
+			"abbreviation": "VET",
+			"flag": "de"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 13,
+				"state": "inpit"
+			},
+			"color": "astonmartin",
+			"firstname": "Lance",
+			"lastname": "Stroll",
+			"team": "Aston Martin",
+			"number": 18,
+			"abbreviation": "STR",
+			"flag": "ca"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 14,
+				"state": "inpit"
+			},
+			"color": "alphatauri",
+			"firstname": "Yuki",
+			"lastname": "Tsunoda",
+			"team": "AlphaTauri",
+			"number": 22,
+			"abbreviation": "TSU",
+			"flag": "jp"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 15,
+				"state": "inpit"
+			},
+			"color": "williams",
+			"firstname": "George",
+			"lastname": "Russel",
+			"team": "Williams",
+			"number": 63,
+			"abbreviation": "RUS",
+			"flag": "gb"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 16,
+				"state": "eliminated"
+			},
+			"color": "alfaromeo",
+			"firstname": "Kimi",
+			"lastname": "Räikkönen",
+			"team": "Alfa Romeo",
+			"number": 7,
+			"abbreviation": "RAI",
+			"flag": "fi"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 17,
+				"state": "eliminated"
+			},
+			"color": "williams",
+			"firstname": "Nicholas",
+			"lastname": "Latifi",
+			"team": "Williams",
+			"number": 6,
+			"abbreviation": "LAT",
+			"flag": "ca"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 18,
+				"state": "eliminated"
+			},
+			"color": "alfaromeo",
+			"firstname": "Antonio",
+			"lastname": "Giovinazzi",
+			"team": "Alfa Romeo",
+			"number": 99,
+			"abbreviation": "GIO",
+			"flag": "it"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 19,
+				"state": "eliminated"
+			},
+			"color": "haas",
+			"firstname": "Mick",
+			"lastname": "Schumacher",
+			"team": "Haas",
+			"number": 47,
+			"abbreviation": "MSC",
+			"flag": "de"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 20,
+				"state": "eliminated"
+			},
+			"color": "alfaromeo",
+			"firstname": "Robert",
+			"lastname": "Kubica",
+			"team": "Alfa Romeo",
+			"number": 88,
+			"abbreviation": "KUB",
+			"flag": "pl"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+		
+		driver = {
+			"grid": {
+				"position": 21,
+				"state": "eliminated"
+			},
+			"color": "haas",
+			"firstname": "Nikita",
+			"lastname": "Mazepin",
+			"team": "Haas",
+			"number": 9,
+			"abbreviation": "MAZ",
+			"flag": "un"
+		};
+
+		new Nameplate(driver).Create(document.querySelector(".container"));
+	</script>
 </body>
 </html>
