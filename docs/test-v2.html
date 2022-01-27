@@ -37,7 +37,11 @@
 			"flag": "nl"
 		};
 
-		new Nameplate(driver).Create(document.querySelector(".container"));
+		let mver = new Nameplate(driver).Create(document.querySelector(".container"));
+
+		document.addEventListener("click", () => {
+			mver.UpdatePosition({"position": mver.context.grid.position + 1, "state": "eliminated"})
+		});
 		
 		driver = {
 			"grid": {

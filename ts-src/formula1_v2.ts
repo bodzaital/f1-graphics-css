@@ -34,15 +34,15 @@ class NameplateContext {
 
 class Nameplate {
 	context: NameplateContext;
+	element: HTMLElement;
 
 	constructor(context: NameplateContext) {
 		this.context = context;
 	}
 
-	private build(name: string, classList: string[], innerText: string = "") {
+	private build(name: string, classList: string[]) {
 		let element = document.createElement(name);
 		classList.forEach((e) => element.classList.add(e));
-		element.innerText = innerText;
 		
 		return element;
 	}
@@ -54,7 +54,7 @@ class Nameplate {
 	public Create(target: HTMLElement) {
 		let container = this.build("div", ["f1", "nameplate-short"]);
 		
-		let position = this.build("div", ["position", this.context.grid.state], this.context.grid.position.toString());
+		let position = this.build("div", ["position"]);
 		let separator = this.build("div", ["separator"]);
 		let teamColor = this.build("div", [`${this.context.color}-bg`]);
 		this.appendChildren(separator, [teamColor]);
@@ -62,14 +62,14 @@ class Nameplate {
 		let nameAndTeam = this.build("div", ["name-and-team"]);
 		let nameAndNumber = this.build("div", ["name-and-number"]);
 		let name = this.build("div", ["name"]);
-		let firstname = this.build("span", ["firstname"], this.context.firstname);
-		let lastname = this.build("span", ["lastname"], this.context.lastname.toUpperCase());
+		let firstname = this.build("span", ["firstname"]);
+		let lastname = this.build("span", ["lastname"]);
 		this.appendChildren(name, [firstname, lastname]);
 		
-		let number = this.build("div", ["number", `${this.context.color}-text`], this.context.number.toString());
+		let number = this.build("div", ["number", `${this.context.color}-text`]);
 		this.appendChildren(nameAndNumber, [name, number]);
 		
-		let team = this.build("div", ["team"], this.context.team);
+		let team = this.build("div", ["team"]);
 		this.appendChildren(nameAndTeam, [nameAndNumber, team]);
 		
 		let flagContainer = this.build("div", ["flag-container"]);
@@ -79,5 +79,33 @@ class Nameplate {
 		
 		this.appendChildren(container, [position, separator, nameAndTeam, flagContainer]);
 		this.appendChildren(target, [container]);
+
+		this.element = container;
+		
+		this.Fields();
+
+		return this;
+	}
+
+	private Fields() {
+		let position = (this.element.querySelector(".position") as HTMLElement);
+		let firstname = (this.element.querySelector(".firstname") as HTMLElement);
+		let lastname = (this.element.querySelector(".lastname") as HTMLElement);
+		let number = (this.element.querySelector(".number") as HTMLElement);
+		let team = (this.element.querySelector(".team") as HTMLElement);
+
+		position.innerText = this.context.grid.position.toString();
+		position.classList = "";
+		position.classList.add("position", this.context.grid.state);
+
+		firstname.innerText = this.context.firstname;
+		lastname.innerText = this.context.lastname.toUpperCase();
+		number.innerText = this.context.number;
+		team.innerText = this.context.team;
+	}
+
+	public UpdatePosition(grid: GridContext) {
+		this.context.grid = grid;
+		this.Fields();
 	}
 }
