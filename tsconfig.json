@@ -2,6 +2,7 @@
 	"compilerOptions": {
 		"target": "es2020",
 		"rootDir": "ts-src",
-		"outDir": "dist"
+		"outDir": "dist",
+		"sourceMap": true
 	}
 }
