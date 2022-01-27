@@ -2,9 +2,11 @@
 
 A small CSS file to emulate the 2021 TV graphics of the Formula 1 world feed. The old 2018 version can be found [here](https://github.com/bodzaital/f1-graphics-css/tree/v2018)
 
-## Usage
+## Download and include
 
-1. Link to the CSS file in the head element:
+Download the [latest release](https://github.com/bodzaital/f1-graphics-css/releases) from the releases tab.
+
+### **1. Link to the CSS file in the head element**
 
 ```html
 <head>
@@ -14,7 +16,7 @@ A small CSS file to emulate the 2021 TV graphics of the Formula 1 world feed. Th
 </head>
 ```
 
-2. Link to the JS file at the bottom of the body element:
+### **2. Link to the JS file at the bottom of the body element**
 
 ```html
 <body>
@@ -23,9 +25,7 @@ A small CSS file to emulate the 2021 TV graphics of the Formula 1 world feed. Th
 </body>
 ```
 
-3. Generate nameplates:
-
-Example:
+### **3. Generate nameplates**
 
 ```html
 <div class="container">
@@ -33,6 +33,7 @@ Example:
 </div>
 <script src="../dist/formula1_v2.js"></script>
 <script>
+	// 1. Create a driver object.
 	let driver = {
 		"grid": {
 			"position": 1,
@@ -47,11 +48,17 @@ Example:
 		"flag": "nl"
 	};
 
-	new Nameplate(driver).Create(document.querySelector(".container"));
+	//2. Call create.
+	let ver = new Nameplate(driver).Create(document.querySelector(".container"));
+	
+	// 3. Update position.
+	ver.UpdatePosition({"position": 11, "state": "eliminated"});
 </script>
 ```
 
-1. Create a driver object that has the following fields:
+## Usage
+
+### **1. Create a driver object**
 
 ```
 grid: {position: number, state: string}
@@ -68,14 +75,17 @@ The grid state can be one of `ontrack`, `inpit`, or `eliminated`.
 
 The color must be one of `mercedes`, `ferrari`, `redbull`, `alpine`, `alphatauri`, `haas`, `williams`, `astonmartin`, `alfaromeo`, `mclaren` or another defined color in `_colors.scss`.
 
-The flag must be an ISO 3166 country code defined in https://flagcdn.com/en/codes.json.
+The flag must be an ISO 3166 country code defined in https://flagcdn.com/en/codes.json, for example: `nl`.
 
-2. Call `new Nameplate(driver).Create(target)`
+### **2. Call `new Nameplate(driver).Create(target)`**
 
 `driver` is the driver object.
 
 `target` is the target HTML element where the nameplate will be inserted.
 
+### **3. Update the nameplate position**
+
+Call `Nameplate.UpdateDriver` with the new grid object. The example in test-v2.html increases Verstappen's grid position for every click.
 
 ## Prerequisites
 
@@ -95,7 +105,7 @@ TV broadcast graphics:
 
 ![Captured TV broadcast graphics.](images/screenshot-tv-v2021.png)
 
-Recreated using CSS (from test.html):
+Recreated using CSS (from test-v2.html):
 
 ![Recreated TV graphics.](images/screenshot-v2021.png)
 
@@ -105,16 +115,24 @@ To add you own team color, edit the `src/_colors.scss` file, and add a new item 
 
 ```scss
 $teams: (
-	("mercedes",	#00d2be),
-	("ferrari",		#dc0000),
-	("redbull",		#0600ef),
-	("alpine",		#0090ff),
-	("haas",		#ffffff),
-	("alphatauri",	#2b4562),
-	("williams",	#005aff),
-	("astonmartin",	#006f62),
-	("alfaromeo",	#900000),
-	("mclaren",		#ff8700),
-	("myteam",		#950245)
+	("mercedes",    #00d2be),
+	("ferrari",     #dc0000),
+	("redbull",     #0600ef),
+	("alpine",      #0090ff),
+	("haas",        #ffffff),
+	("alphatauri",  #2b4562),
+	("williams",    #005aff),
+	("astonmartin", #006f62),
+	("alfaromeo",   #900000),
+	("mclaren",     #ff8700),
+
+	("myteam",      #950245)
 );
 ```
+
+*I will update this list when the 2022 colors are released.*
+
+## Plans
+
+- The larger and smaller hotlap timing panels
+- The timing tower
