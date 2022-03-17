@@ -23,83 +23,83 @@
   src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1YEAR/F1YEARRegular.woff2") format("woff2");
 }
 .mercedes-bg {
-  background-color: #00d2be;
+  background-color: #6cd3bf;
 }
 
 .mercedes-text {
-  text-shadow: 0 0 7px #00d2be, 0 0 7px #00d2be;
+  text-shadow: 0 0 7px #6cd3bf, 0 0 7px #6cd3bf;
 }
 
 .ferrari-bg {
-  background-color: #dc0000;
+  background-color: #ed1c24;
 }
 
 .ferrari-text {
-  text-shadow: 0 0 7px #dc0000, 0 0 7px #dc0000;
+  text-shadow: 0 0 7px #ed1c24, 0 0 7px #ed1c24;
 }
 
 .redbull-bg {
-  background-color: #0600ef;
+  background-color: #1e5bc6;
 }
 
 .redbull-text {
-  text-shadow: 0 0 7px #0600ef, 0 0 7px #0600ef;
+  text-shadow: 0 0 7px #1e5bc6, 0 0 7px #1e5bc6;
 }
 
 .alpine-bg {
-  background-color: #0090ff;
+  background-color: #2293d1;
 }
 
 .alpine-text {
-  text-shadow: 0 0 7px #0090ff, 0 0 7px #0090ff;
+  text-shadow: 0 0 7px #2293d1, 0 0 7px #2293d1;
 }
 
 .haas-bg {
-  background-color: #ffffff;
+  background-color: #b6babd;
 }
 
 .haas-text {
-  text-shadow: 0 0 7px #ffffff, 0 0 7px #ffffff;
+  text-shadow: 0 0 7px #b6babd, 0 0 7px #b6babd;
 }
 
 .alphatauri-bg {
-  background-color: #2b4562;
+  background-color: #4e7c9b;
 }
 
 .alphatauri-text {
-  text-shadow: 0 0 7px #2b4562, 0 0 7px #2b4562;
+  text-shadow: 0 0 7px #4e7c9b, 0 0 7px #4e7c9b;
 }
 
 .williams-bg {
-  background-color: #005aff;
+  background-color: #37bedd;
 }
 
 .williams-text {
-  text-shadow: 0 0 7px #005aff, 0 0 7px #005aff;
+  text-shadow: 0 0 7px #37bedd, 0 0 7px #37bedd;
 }
 
 .astonmartin-bg {
-  background-color: #006f62;
+  background-color: #2d826d;
 }
 
 .astonmartin-text {
-  text-shadow: 0 0 7px #006f62, 0 0 7px #006f62;
+  text-shadow: 0 0 7px #2d826d, 0 0 7px #2d826d;
 }
 
 .alfaromeo-bg {
-  background-color: #900000;
+  background-color: #b12039;
 }
 
 .alfaromeo-text {
-  text-shadow: 0 0 7px #900000, 0 0 7px #900000;
+  text-shadow: 0 0 7px #b12039, 0 0 7px #b12039;
 }
 
 .mclaren-bg {
-  background-color: #ff8700;
+  background-color: #f58020;
 }
 
 .mclaren-text {
-  text-shadow: 0 0 7px #ff8700, 0 0 7px #ff8700;
+  text-shadow: 0 0 7px #f58020, 0 0 7px #f58020;
 }
 
 .f1.nameplate-short {
