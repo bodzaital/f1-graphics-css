@@ -115,22 +115,22 @@ To add you own team color, edit the `src/_colors.scss` file, and add a new item 
 
 ```scss
 $teams: (
-	("mercedes",    #00d2be),
-	("ferrari",     #dc0000),
-	("redbull",     #0600ef),
-	("alpine",      #0090ff),
-	("haas",        #ffffff),
-	("alphatauri",  #2b4562),
-	("williams",    #005aff),
-	("astonmartin", #006f62),
-	("alfaromeo",   #900000),
-	("mclaren",     #ff8700),
+	("mercedes",	#6cd3bf),
+	("ferrari",		#ed1c24),
+	("redbull",		#1e5bc6),
+	("alpine",		#2293d1),
+	("haas",		#b6babd),
+	("alphatauri",	#4e7c9b),
+	("williams",	#37bedd),
+	("astonmartin",	#2d826d),
+	("alfaromeo",	#b12039),
+	("mclaren",		#f58020),
 
 	("myteam",      #950245)
 );
 ```
 
-*I will update this list when the 2022 colors are released.*
+*Colors correct as of 17<sup>th</sup> March 2022.*
 
 ## Plans
 
