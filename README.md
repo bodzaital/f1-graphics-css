@@ -1,6 +1,6 @@
-![F1 TV graphics in CSS](images/header-v2021.png)
+![F1 TV graphics in CSS](images/2022.png)
 
-A small CSS file to emulate the 2021 TV graphics of the Formula 1 world feed. The old 2018 version can be found [here](https://github.com/bodzaital/f1-graphics-css/tree/v2018)
+A small CSS file to emulate the 2022 TV graphics of the Formula 1 world feed. The old 2018 version can be found [here](https://github.com/bodzaital/f1-graphics-css/tree/v2018)
 
 ## Download and include
 
@@ -95,7 +95,7 @@ To create custom colors (see below), you need a Sass compiler.
 
 ## Differences
 
-The world feed uses a slightly different font (see: capital `M`). Sizes are not the exact same between the world feed and the CSS. The 2021 colors are taken from [this reddit post](https://www.reddit.com/r/formula1/comments/m18iwo/new_team_colors_again_from_formula1com_compared/). TV compression may render colors and shapes in a different way.
+The world feed uses a slightly different font (see: capital `M`). Sizes are not the exact same between the world feed and the CSS. The 2022 team colors are from formula1.com, correct as of 17<sup>th</sup> March 2022. TV compression may render colors and shapes in a different way.
 
 The flags are automatically downloaded from flagcdn.com. The proportions and the visible parts, and effects are different than those on the world feed. For available flags, see https://flagcdn.com/en/codes.json.
 
