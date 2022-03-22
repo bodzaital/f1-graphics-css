@@ -1,6 +1,11 @@
-![F1 TV graphics in CSS](images/2022.png)
+![F1 TV graphics in CSS](images/header-v2021.png)
 
-A small CSS file to emulate the 2022 TV graphics of the Formula 1 world feed. The old 2018 version can be found [here](https://github.com/bodzaital/f1-graphics-css/tree/v2018)
+## Work-in-progress for 2022
+
+A small CSS file to emulate the 2022 TV graphics of the Formula 1 world feed.
+
+- The old **2018** version can be found [here](https://github.com/bodzaital/f1-graphics-css/tree/v2018)
+- The old **2021** version can be found [here](https://github.com/bodzaital/f1-graphics-css/tree/v2021)
 
 ## Download and include
 
